@@ -31,6 +31,7 @@ SOONG_CONFIG_lineageGlobalVars += \
     additional_gralloc_10_usage_bits \
     bootloader_message_offset \
     camera_override_format_from_reserved \
+    target_camera_package_name \
     target_init_vendor_lib \
     target_power_libperfmgr_mode_extension_lib \
     target_trust_usb_control_path \
@@ -53,6 +54,7 @@ TARGET_TRUST_USB_CONTROL_DISABLE ?= 0
 # Soong value variables
 SOONG_CONFIG_lineageGlobalVars_additional_gralloc_10_usage_bits := $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS)
 SOONG_CONFIG_lineageGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
+SOONG_CONFIG_lineageGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
 SOONG_CONFIG_lineageGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
 SOONG_CONFIG_lineageGlobalVars_target_power_libperfmgr_mode_extension_lib := $(TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB)
 SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
