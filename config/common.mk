@@ -261,6 +261,69 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/lineage/build/target/product/security/lineage
 
+# Art
+PRODUCT_PRODUCT_PROPERTIES += \
+    pm.dexopt.post-boot=extract \
+    pm.dexopt.boot-after-mainline-update=verify \
+    pm.dexopt.install=speed-profile \
+    pm.dexopt.install-fast=skip \
+    pm.dexopt.install-bulk=speed-profile \
+    pm.dexopt.install-bulk-secondary=verify \
+    pm.dexopt.install-bulk-downgraded=verify \
+    pm.dexopt.install-bulk-secondary-downgraded=extract \
+    pm.dexopt.bg-dexopt=speed-profile \
+    pm.dexopt.ab-ota=speed-profile \
+    pm.dexopt.inactive=verify \
+    pm.dexopt.cmdline=verify \
+    pm.dexopt.shared=quicken \
+    pm.dexopt.first-boot=verify \
+    pm.dexopt.boot-after-ota=verify \
+    dalvik.vm.minidebuginfo=false \
+    dalvik.vm.dex2oat-minidebuginfo=false
+    dalvik.vm.dex2oat-minidebuginfo=false \
+    pm.dexopt.downgrade_after_inactive_days=10 \
+    dalvik.vm.madvise-random=true
+    
+# lmk 
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.lmk.critical_upgrade=true \
+    ro.lmk.upgrade_pressure=40 \
+    ro.lmk.downgrade_pressure=60 \
+    ro.lmk.kill_heaviest_task=true \
+    ro.lmk.medium=701
+
+## Art
+
+# Always preopt extracted APKs to prevent extracting out of the APK for gms
+# modules.
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+
+# Do not generate libartd.
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+
+# Speed profile services and wifi-service to reduce RAM and storage.
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
+# Use a profile based boot image for this device. Note that this is currently a
+# generic profile and not Android Go optimized.
+PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/boot/boot-image-profile.txt
+
+# Disable dex2oat debug
+USE_DEX2OAT_DEBUG := false
+
+## Java
+# Strip the local variable table and the local variable type table to reduce
+# the size of the system image. This has no bearing on stack traces, but will
+# leave less information available via JDWP.
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
+PRODUCT_DISABLE_SCUDO := true
+
+# Optimize java for system processes
+SYSTEM_OPTIMIZE_JAVA := true
+SYSTEMUI_OPTIMIZE_JAVA := true
+
 include vendor/lineage/config/version.mk
 
 -include vendor/lineage-priv/keys/keys.mk
