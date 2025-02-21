@@ -9,7 +9,6 @@ endif
 
 LINEAGE_BUILDTYPE := COMMUNITY
 
-WITH_GMS ?= true
 ifeq ($(WITH_GMS),true)
 AXION_BUILD_VARIANT := GMS
 else
