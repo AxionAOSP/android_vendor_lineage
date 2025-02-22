@@ -1,13 +1,25 @@
 PRODUCT_VERSION_MAJOR = 1
 PRODUCT_VERSION_MINOR = 1
 
+CURRENT_DEVICE := $(wordlist 2,3,$(subst _, ,$(TARGET_PRODUCT)))
+DEVICE_LIST := $(file < vendor/official_devices/OTA/axion.devices)
+MAINTAINER_LIST := $(file < vendor/official_devices/OTA/axion.maintainers)
+
+LINEAGE_BUILDTYPE ?= COMMUNITY
+
+ifneq ($(filter $(CURRENT_DEVICE),$(DEVICE_LIST)),)
+    ifneq ($(AXION_MAINTAINER),)
+        ifneq ($(filter $(AXION_MAINTAINER),$(MAINTAINER_LIST)),)
+            LINEAGE_BUILDTYPE := OFFICIAL
+        endif
+    endif
+endif
+
 ifeq ($(LINEAGE_VERSION_APPEND_TIME_OF_DAY),true)
     LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
 else
     LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d)
 endif
-
-LINEAGE_BUILDTYPE := COMMUNITY
 
 ifeq ($(WITH_GMS),true)
 AXION_BUILD_VARIANT := GMS
