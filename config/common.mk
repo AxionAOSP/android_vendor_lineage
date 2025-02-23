@@ -369,7 +369,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.input.video_enabled=false
 
-WITH_GMS ?= true
 ifeq ($(WITH_GMS),true)
 -include vendor/gapps/arm64/arm64-vendor.mk
 endif
