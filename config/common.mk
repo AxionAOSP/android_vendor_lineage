@@ -340,7 +340,8 @@ PRODUCT_PACKAGES += \
     LMOFreeformSidebar \
     Backgrounds \
     GameSpace \
-    Updater
+    Updater \
+    ColumbusService
 
 ifneq ($(TARGET_FACE_UNLOCK_SUPPORTED),false)
 PRODUCT_PACKAGES += \
