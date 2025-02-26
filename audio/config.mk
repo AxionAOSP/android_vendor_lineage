@@ -28,6 +28,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.ringtone=23_echo_of_fate.ogg \
-    ro.config.notification_sound=21_oneplus.ogg \
+    ro.config.notification_sound=01_oi!.ogg \
     ro.config.alarm_alert=11_isekai.ogg
 
