@@ -362,7 +362,8 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     GameSpace \
     Updater \
-    ColumbusService
+    ColumbusService \
+    OmniJaws
 
 ifneq ($(TARGET_FACE_UNLOCK_SUPPORTED),false)
 PRODUCT_PACKAGES += \
