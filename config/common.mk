@@ -357,7 +357,8 @@ PRODUCT_PACKAGES += \
     LMOFreeformSidebar \
     Backgrounds \
     GameSpace \
-    ColumbusService
+    ColumbusService \
+    OmniJaws
 
 ifneq ($(TARGET_FACE_UNLOCK_SUPPORTED),false)
 PRODUCT_PACKAGES += \
