@@ -10,7 +10,7 @@ PRODUCT_OUT=$2
 LINEAGE_ZIP=$3
 FILENAME="axion-$LINEAGE_ZIP"
 
-if [[ "$FILENAME" =~ axion-.*-(COMMUNITY|OFFICIAL)-.*\.zip ]]; then
+if [[ "$FILENAME" =~ axion-.*-(COMMUNITY|OFFICIAL|UNOFFICIAL)-.*\.zip ]]; then
     ROMTYPE="${BASH_REMATCH[1]}"
 else
     echo "Error: Unable to extract ROM type from filename: $FILENAME"
@@ -53,5 +53,16 @@ cat > "$JSON_FILE" <<EOF
 EOF
 
 echo "JSON saved to: $JSON_FILE"
-
 cat "$JSON_FILE"
+
+echo "=========================================="
+echo "         Welcome to the Axion             "
+echo "=========================================="
+echo "        BUILD COMPLETED SUCCESSFULLY      "
+echo "------------------------------------------"
+echo "Datetime : $DATETIME"
+echo "Size     : $(numfmt --to=iec $SIZE) ($SIZE bytes)"
+echo "Output   : $FILE_PATH"
+echo "=========================================="
+
+exit 0
