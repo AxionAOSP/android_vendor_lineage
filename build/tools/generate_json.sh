@@ -24,6 +24,13 @@ else
     exit 1
 fi
 
+if [[ "$FILENAME" =~ axion-.*-$ROMTYPE-(GMS|VANILLA)-.*\.zip ]]; then
+    FLAVOR="${BASH_REMATCH[1]}"
+else
+    echo "Error: Unable to extract build flavor from filename: $FILENAME"
+    exit 1
+fi
+
 FILE_PATH="$PRODUCT_OUT/$FILENAME"
 
 if [ ! -f "$FILE_PATH" ]; then
@@ -34,7 +41,12 @@ fi
 SIZE=$(stat -c%s "$FILE_PATH")
 ID=$(md5sum "$FILE_PATH" | awk '{print $1}')
 DATETIME=$(date +%s)
-JSON_FILE="$PRODUCT_OUT/${TARGET_DEVICE}.json"
+
+JSON_DIR="$PRODUCT_OUT/$FLAVOR"
+if [ ! -d "$JSON_DIR" ]; then
+    mkdir -p "$JSON_DIR"
+fi
+JSON_FILE="$JSON_DIR/${TARGET_DEVICE}.json"
 
 cat > "$JSON_FILE" <<EOF
 {
