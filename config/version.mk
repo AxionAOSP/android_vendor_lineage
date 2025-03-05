@@ -41,10 +41,14 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION) \
     ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
     ro.lineage.releasetype=$(LINEAGE_BUILDTYPE)
-    
+
+AXION_CPU_SMALL_CORES ?= 0,1,2,3
+AXION_CPU_BIG_CORES ?= 4,5,6,7
 # AxionOS properties
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.device_camera_info_rear=$(AXION_CAMERA_REAR_INFO) \
     persist.sys.device_camera_info_front=$(AXION_CAMERA_FRONT_INFO) \
     persist.sys.axion_maintainer=$(AXION_MAINTAINER) \
-    persist.sys.axion_processor_info=$(AXION_PROCESSOR)
+    persist.sys.axion_processor_info=$(AXION_PROCESSOR)\
+    persist.sys.axion_cpu_big=$(AXION_CPU_BIG_CORES) \
+    persist.sys.axion_cpu_small=$(AXION_CPU_SMALL_CORES)
