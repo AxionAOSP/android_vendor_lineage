@@ -106,9 +106,7 @@ ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 include vendor/lineage/config/lineage_sdk_common.mk
 endif
 
-ART_BUILD_TARGET_NDEBUG := false
 ART_BUILD_TARGET_DEBUG := false
-ART_BUILD_HOST_NDEBUG := false
 ART_BUILD_HOST_DEBUG := false
 
 # Do not include art debug targets
@@ -297,7 +295,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     pm.dexopt.first-boot=verify \
     pm.dexopt.boot-after-ota=verify \
     dalvik.vm.minidebuginfo=false \
-    dalvik.vm.dex2oat-minidebuginfo=false
     dalvik.vm.dex2oat-minidebuginfo=false \
     pm.dexopt.downgrade_after_inactive_days=10 \
     dalvik.vm.madvise-random=true
@@ -326,9 +323,6 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 # generic profile and not Android Go optimized.
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/boot/boot-image-profile.txt
-
-# Disable dex2oat debug
-USE_DEX2OAT_DEBUG := false
 
 ## Java
 # Strip the local variable table and the local variable type table to reduce
