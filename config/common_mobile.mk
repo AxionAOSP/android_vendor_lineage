@@ -6,8 +6,24 @@ PRODUCT_PACKAGES += \
     AvatarPicker \
     Backgrounds \
     Glimpse \
-    LatinIME \
-    Launcher3QuickStep
+    LatinIME
+
+ifeq ($(PRODUCT_TYPE), go)
+PRODUCT_PACKAGES += \
+    TrebuchetQuickStepGo
+
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    TrebuchetQuickStepGo
+else
+PRODUCT_PACKAGES += \
+    TrebuchetQuickStep
+
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    TrebuchetQuickStep
+endif
+
+PRODUCT_PACKAGES += \
+    TrebuchetOverlay
 
 # Charger
 PRODUCT_PACKAGES += \
