@@ -1,5 +1,5 @@
 PRODUCT_VERSION_MAJOR = 1
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MINOR = 2
 
 CURRENT_DEVICE := $(wordlist 2,3,$(subst _, ,$(TARGET_PRODUCT)))
 DEVICE_LIST := $(file < vendor/official_devices/OTA/axion.devices)
