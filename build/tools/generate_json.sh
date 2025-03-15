@@ -43,9 +43,16 @@ if [ ! -f "$FILE_PATH" ]; then
     exit 1
 fi
 
+BUILDPROP_PATH="$PRODUCT_OUT/system/build.prop"
+DATETIME=$(grep "ro.build.date.utc" "$BUILDPROP_PATH" | cut -d'=' -f2 | tr -d '\r\n')
+
+if [ -z "$DATETIME" ]; then
+    echo "Error: Could not extract timestamp from build.prop"
+    exit 1
+fi
+
 SIZE=$(stat -c%s "$FILE_PATH")
 ID=$(md5sum "$FILE_PATH" | awk '{print $1}')
-DATETIME=$(date +%s)
 
 JSON_DIR="$PRODUCT_OUT/$FLAVOR"
 if [ ! -d "$JSON_DIR" ]; then
