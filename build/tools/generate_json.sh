@@ -17,7 +17,7 @@ else
     exit 1
 fi
 
-if [[ "$FILENAME" =~ axion-([0-9\.]+)-[0-9]+-$ROMTYPE-.*\.zip ]]; then
+if [[ "$FILENAME" =~ axion-([0-9\.]+)(-[A-Za-z]+)?-[0-9]+-$ROMTYPE-.*\.zip ]]; then
     VERSION="${BASH_REMATCH[1]}"
 else
     echo "Error: Unable to extract version from filename: $FILENAME"
