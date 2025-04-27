@@ -352,6 +352,18 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.arm64.memtag.app.com.android.nfc=off \
     persist.arm64.memtag.process.system_server=off
 
+# PIF
+PRODUCT_PRODUCT_PROPERTIES += \
+     persist.sys.pihooks_BRAND?=google \
+     persist.sys.pihooks_MANUFACTURER?=Google \
+     persist.sys.pihooks_DEVICE?=oriole \
+     persist.sys.pihooks_PRODUCT?=oriole_beta \
+     persist.sys.pihooks_DEVICE_INITIAL_SDK_INT?=21 \
+     persist.sys.pihooks_SECURITY_PATCH?=2025-04-05 \
+     persist.sys.pihooks_ID?=BP22.250325.007 \
+     persist.sys.pihooks_FINGERPRINT?=google/oriole_beta/oriole:16/BP22.250325.007/13352765:user/release-keys \
+     persist.sys.pihooks_MODEL?=Pixel 6
+
 # Product Copy
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Vendor_045e_Product_0719.kl \
