@@ -22,3 +22,7 @@ persist.sys.disable_rescue=true
 
 # disable privapp_permissions
 ro.control_privapp_permissions=disable
+
+# Disable touch video heatmap to reduce latency, motion jitter, and CPU usage
+# on supported devices with Deep Press input classifier HALs and models
+ro.input.video_enabled=false
