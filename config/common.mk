@@ -2,6 +2,9 @@
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/addons/config.mk)
 $(call inherit-product, vendor/lineage/config/defaults_common.mk)
+ifeq ($(TARGET_INCLUDE_VIPERFX),true)
+$(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
+endif
 include vendor/lineage/audio/config.mk
 
 # Allow vendor prebuilt repos to exclude themselves from bp scanning
