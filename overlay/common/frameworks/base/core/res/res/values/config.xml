@@ -234,4 +234,6 @@
     <bool name="device_idle_light_idle_increase_linearly">false</bool>
     
     <bool name="config_enableBurnInProtection">true</bool>
+    
+    <bool name="config_dreamsEnabledByDefault">false</bool>
 </resources>
