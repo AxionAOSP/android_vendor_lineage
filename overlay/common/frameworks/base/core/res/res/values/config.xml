@@ -221,4 +221,6 @@
         <item><xliff:g id="id">@*android:string/status_bar_battery</xliff:g></item>
         <item><xliff:g id="id">@*android:string/status_bar_sensors_off</xliff:g></item>
     </string-array>
+    
+    <dimen name="config_viewConfigurationTouchSlop">6dp</dimen>
 </resources>
