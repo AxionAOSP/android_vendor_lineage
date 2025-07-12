@@ -28,3 +28,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 TARGET_SYSTEM_PROP += \
     vendor/lineage/config/defaults_common.prop
+    
+PRODUCT_PACKAGES += \
+    GameSpace
