@@ -31,4 +31,5 @@ TARGET_SYSTEM_PROP += \
     
 PRODUCT_PACKAGES += \
     GameSpace \
-    OmniJaws
+    OmniJaws \
+    AppLocker
