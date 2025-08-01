@@ -3,7 +3,8 @@ ro.lmk.critical_upgrade=true
 ro.lmk.upgrade_pressure=40
 ro.lmk.downgrade_pressure=60
 ro.lmk.kill_heaviest_task=false
-ro.lmk.medium=700
+persist.sys.nmm.critical_psi=400
+persist.sys.mglru_enable=true
 
 # set threshold to filter unused apps
 pm.dexopt.downgrade_after_inactive_days=10
@@ -13,6 +14,9 @@ pm.dexopt.downgrade_after_inactive_days=10
 dalvik.vm.heapgrowthlimit=128m
 dalvik.vm.heapsize=256m
 dalvik.vm.madvise-random=true
+dalvik.vm.enable_pr_dexopt=false
+dalvik.vm.finalizer-timeout-ms=40000
+dalvik.vm.ps-min-first-save-ms=150000
 
 # disable machine learning
 ro.nnapi.extensions.deny_on_product=true
@@ -29,3 +33,9 @@ ro.input.video_enabled=false
 
 # Disable default frame rate limit for games
 debug.graphics.game_default_frame_rate.disabled=true
+
+# sf
+ro.surface_flinger.uclamp.min=10
+
+# memcg
+ro.config.per_app_memcg=true

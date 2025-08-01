@@ -26,7 +26,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.madvise.odexfile.size=31457280\
     dalvik.vm.madvise.artfile.size=0
 
-TARGET_SYSTEM_PROP += \
+TARGET_PRODUCT_PROP += \
     vendor/lineage/config/defaults_common.prop
 
 ifneq ($(TARGET_FACE_UNLOCK_SUPPORTED),false)

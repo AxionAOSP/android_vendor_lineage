@@ -43,41 +43,55 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
     ro.lineage.releasetype=$(LINEAGE_BUILDTYPE)
 
+# CPU
 AXION_CPU_SMALL_CORES ?= 0,1,2,3
 AXION_CPU_BIG_CORES ?= 4,5,6,7
-AXION_CPU_UNLIMIT_UI ?= 0-7
+AXION_ALL_CORES ?= 0-7
+AXION_CPU_SYS_BG ?= 0-3
 AXION_CPU_BG ?= 0-2
 AXION_CPU_FG ?= 0-7
 AXION_CPU_LIMIT_BG ?= 0-1
-AXION_CPU_LIMIT_UI ?= 0-4
-AXION_CPU_DISPLAY ?= 4-7
-AXION_CPU_AUDIO ?= 0-3
+AXION_CPU_LIMIT_UI ?= 0-2
+AXION_CPU_DISPLAY ?= 0-5
+
+# Feature
 BYPASS_CHARGE_SUPPORTED ?= false
-AXION_DEBUGGING_ENABLED ?= false
-# 2 small cores only
+PERF_GOV_SUPPORTED ?= false
+PERF_DEFAULT_GOV ?= schedutil
+
+# Dex2oat - recommended: 2 small cores only
 DEX2OAT_CORES ?= 0,1
-# AxionOS properties
+DEX2OAT_THREADS ?= 2
+
+# AxionOS properties - Build info
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.device_camera_info_rear=$(AXION_CAMERA_REAR_INFO) \
     persist.sys.device_camera_info_front=$(AXION_CAMERA_FRONT_INFO) \
     persist.sys.axion_maintainer=$(AXION_MAINTAINER) \
     persist.sys.axion_processor_info=$(AXION_PROCESSOR)\
-    persist.sys.axion_cpu_big=$(AXION_CPU_BIG_CORES) \
-    persist.sys.axion_cpu_small=$(AXION_CPU_SMALL_CORES) \
-    persist.sys.battery_bypass_supported=$(BYPASS_CHARGE_SUPPORTED) \
-    persist.sys.axion_cpu_bg=$(AXION_CPU_BG) \
-    persist.sys.axion_cpu_limit_bg=$(AXION_CPU_LIMIT_BG) \
-    persist.sys.axion_cpu_fg=$(AXION_CPU_FG) \
-    persist.sys.axion_cpu_limit_ui=$(AXION_CPU_LIMIT_UI) \
-    persist.sys.axion_cpu_unlimit_ui=$(AXION_CPU_UNLIMIT_UI) \
-    persist.sys.axion_cpu_audio=$(AXION_CPU_AUDIO) \
-    persist.sys.axion_cpu_display=$(AXION_CPU_DISPLAY) \
-    ro.sys.axion_userdebug_enabled=$(AXION_DEBUGGING_ENABLED) \
     ro.axion.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
 
 # dex2oat
-PRODUCT_SYSTEM_PROPERTIES += \
-    dalvik.vm.dex2oat-threads=2 \
-    dalvik.vm.restore-dex2oat-threads=2 \
+PRODUCT_PRODUCT_PROPERTIES += \
+    dalvik.vm.dex2oat-threads=$(DEX2OAT_THREADS) \
+    dalvik.vm.restore-dex2oat-threads=$(DEX2OAT_THREADS) \
     dalvik.vm.dex2oat-cpu-set=$(DEX2OAT_CORES) \
     dalvik.vm.restore-dex2oat-cpu-set=$(DEX2OAT_CORES)
+
+# CPU
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.axion_cpu_big=$(AXION_CPU_BIG_CORES) \
+    persist.sys.axion_cpu_small=$(AXION_CPU_SMALL_CORES) \
+    persist.sys.axion_cpu_bg=$(AXION_CPU_BG) \
+    persist.sys.axion_cpu_sys_bg=$(AXION_CPU_SYS_BG) \
+    persist.sys.axion_cpu_limit_bg=$(AXION_CPU_LIMIT_BG) \
+    persist.sys.axion_cpu_fg=$(AXION_CPU_FG) \
+    persist.sys.axion_cpu_limit_ui=$(AXION_CPU_LIMIT_UI) \
+    persist.sys.axion_cpu_unlimit_ui=$(AXION_ALL_CORES) \
+    persist.sys.axion_cpu_display=$(AXION_CPU_DISPLAY)
+
+# FEATURES
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.battery_bypass_supported=$(BYPASS_CHARGE_SUPPORTED) \
+    persist.sys.dev_supports_perf_gov=$(PERF_GOV_SUPPORTED) \
+    persist.sys.default_scaling_gov=$(PERF_DEFAULT_GOV)
