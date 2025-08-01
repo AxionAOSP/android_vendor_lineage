@@ -246,7 +246,7 @@ endif
 $(call inherit-product, vendor/lineage/audio/audio.mk)
 
 # Enable blur
-TARGET_ENABLE_BLUR ?= true
+TARGET_ENABLE_BLUR ?= false
 ifeq ($(TARGET_ENABLE_BLUR),true)
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.custom.blur.enable=true
