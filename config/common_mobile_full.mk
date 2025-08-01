@@ -10,17 +10,17 @@ $(call inherit-product-if-exists, external/google-fonts/rubik/fonts.mk)
 # Apps
 PRODUCT_PACKAGES += \
     Camelot \
-    Etar \
     Profiles \
     Recorder \
-    Seedvault \
-    Twelve
+    Seedvault
 
+PRODUCT_NO_CAMERA ?= true
 ifneq ($(PRODUCT_NO_CAMERA),true)
 PRODUCT_PACKAGES += \
     Aperture
 endif
 
+TARGET_EXCLUDES_AUDIOFX ?= true
 ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
 PRODUCT_PACKAGES += \
     AudioFX
