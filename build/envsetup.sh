@@ -930,8 +930,10 @@ function fixup_common_out_dir() {
     fi
 }
 
+export SKIP_ABI_CHECKS=true
+
 function build_kernel() {
-    local lineage_version="lineage-$(_get_build_var_cached PRODUCT_VERSION_MAJOR).$(_get_build_var_cached PRODUCT_VERSION_MINOR)"
+    local lineage_version="lineage-23.0"
 
     local target_kernel_device="$(_get_build_var_cached TARGET_KERNEL_DEVICE)"
     local target_kernel_dir="${ANDROID_BUILD_TOP}/$(_get_build_var_cached TARGET_KERNEL_DIR)"
@@ -980,7 +982,7 @@ function build_kernel() {
             repo_init_args+=("--repo-rev" "${REPO_VERSION}")
         fi
 
-        yes | repo init -u https://github.com/LineageOS/${target_kernel_manifest}.git ${repo_init_args[@]} || [ $? -eq 141 ]
+        yes | repo init -u https://github.com/AxionAOSP-devices/${target_kernel_manifest}.git ${repo_init_args[@]} || [ $? -eq 141 ]
         if [ $? -ne 0 ]; then
             echo "Kernel source repo init failed"
             popd > /dev/null
