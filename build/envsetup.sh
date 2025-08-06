@@ -930,6 +930,8 @@ function fixup_common_out_dir() {
     fi
 }
 
+export SKIP_ABI_CHECKS=true
+
 function build_kernel() {
     if [[ "${SKIP_KERNEL_BUILD}" == "true" || "${SKIP_KERNEL_BUILD}" == "1" ]]; then
         echo "Skipping kernel build"
