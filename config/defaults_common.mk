@@ -46,4 +46,5 @@ PRODUCT_PACKAGES += \
     GameSpace \
     OmniJaws \
     AppLocker \
-    EdgeLauncher
+    EdgeLauncher \
+    AxionWidgets
