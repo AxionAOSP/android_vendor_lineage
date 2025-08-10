@@ -38,4 +38,5 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     AppLocker \
     EdgeLauncher \
-    AxionWidgets
+    AxionWidgets \
+    ColumbusService
