@@ -10,7 +10,7 @@ genrule {
         "soong_zip",
     ],
     tool_files: [
-        "bootanimation.tar",
+        "cust-bootanimation.tar",
         "desc.txt",
         "gen-bootanimation.sh",
     ],
@@ -26,7 +26,7 @@ genrule {
             "$(location gen-bootanimation.sh)" +
             " $(out)" +
             " $(genDir)" +
-            " $(location bootanimation.tar)" +
+            " $(location cust-bootanimation.tar)" +
             " $(location desc.txt)" +
             " $(location mogrify)" +
             " $(location soong_zip)" +
@@ -37,7 +37,7 @@ genrule {
             "$(location gen-bootanimation.sh)" +
             " $(out)" +
             " $(genDir)" +
-            " $(location bootanimation.tar)" +
+            " $(location cust-bootanimation.tar)" +
             " $(location desc.txt)" +
             " $(location mogrify)" +
             " $(location soong_zip)" +
