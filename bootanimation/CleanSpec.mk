@@ -15,3 +15,4 @@
 #
 
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/BOOTANIMATION)
+$(call add-clean-step, rm -rf $(TARGET_OUT_INTERMEDIATES)/BOOTANIMATION/bootanimation.zip)
