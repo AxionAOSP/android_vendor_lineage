@@ -48,7 +48,9 @@ fi
 IMAGEHEIGHT=$(expr $IMAGEWIDTH / 3);
 RESOLUTION="$IMAGEWIDTH"x"$IMAGEHEIGHT";
 
-$PARAM_MOGRIFY -resize $RESOLUTION -colors 256 $INTERMEDIATES/*/*.png;
+for img in $INTERMEDIATES/*/*.png; do
+    convert "$img" -resize $RESOLUTION -colors 256 "$img"
+done
 
 echo "$IMAGESCALEWIDTH $IMAGESCALEHEIGHT 60" > $INTERMEDIATES/desc.txt;
 cat $PARAM_DESC_TXT >> $INTERMEDIATES/desc.txt
