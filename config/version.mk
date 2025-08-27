@@ -47,6 +47,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 BYPASS_CHARGE_SUPPORTED ?= false
 PERF_GOV_SUPPORTED ?= false
 PERF_DEFAULT_GOV ?= schedutil
+PERF_ANIM_OVERRIDE ?= false
 
 # Dex2oat - recommended: 2 small cores only
 DEX2OAT_CORES ?= 0,1
@@ -71,4 +72,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.battery_bypass_supported=$(BYPASS_CHARGE_SUPPORTED) \
     persist.sys.dev_supports_perf_gov=$(PERF_GOV_SUPPORTED) \
-    persist.sys.default_scaling_gov=$(PERF_DEFAULT_GOV)
+    persist.sys.default_scaling_gov=$(PERF_DEFAULT_GOV) \
+    persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE)
