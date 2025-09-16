@@ -44,9 +44,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.lineage.releasetype=$(LINEAGE_BUILDTYPE)
 
 # CPU
-AXION_CPU_SMALL_CORES ?= 0,1,2,3
-AXION_CPU_BIG_CORES ?= 4,5,6,7
-AXION_ALL_CORES ?= 0-7
 AXION_CPU_SYS_BG ?= 0-3
 AXION_CPU_BG ?= 0-2
 AXION_CPU_FG ?= 0-7
@@ -83,14 +80,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # CPU
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.axion_cpu_big=$(AXION_CPU_BIG_CORES) \
-    persist.sys.axion_cpu_small=$(AXION_CPU_SMALL_CORES) \
     persist.sys.axion_cpu_bg=$(AXION_CPU_BG) \
     persist.sys.axion_cpu_sys_bg=$(AXION_CPU_SYS_BG) \
     persist.sys.axion_cpu_limit_bg=$(AXION_CPU_LIMIT_BG) \
     persist.sys.axion_cpu_fg=$(AXION_CPU_FG) \
     persist.sys.axion_cpu_limit_ui=$(AXION_CPU_LIMIT_UI) \
-    persist.sys.axion_cpu_unlimit_ui=$(AXION_ALL_CORES) \
     persist.sys.axion_cpu_display=$(AXION_CPU_DISPLAY)
 
 # FEATURES
