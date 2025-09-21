@@ -50,6 +50,7 @@ PERF_DEFAULT_GOV ?= schedutil
 PERF_ANIM_OVERRIDE ?= false
 HBM_SUPPORTED ?= false
 HBM_NODE ?= /sys/class/backlight/panel0-backlight/hbm_mode
+TORCH_STR_SUPPORTED ?= false
 
 # Dex2oat - recommended: 2 small cores only
 DEX2OAT_CORES ?= 0,1
@@ -77,4 +78,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.default_scaling_gov=$(PERF_DEFAULT_GOV) \
     persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE) \
     persist.sys.hbmservice_support=$(HBM_SUPPORTED) \
-    persist.sys.hbmservice_file=$(HBM_NODE)
+    persist.sys.hbmservice_file=$(HBM_NODE) \
+    persist.sys.torch_str_support=$(TORCH_STR_SUPPORTED)
