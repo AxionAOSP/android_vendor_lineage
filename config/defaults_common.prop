@@ -1,4 +1,8 @@
 # Set lowram options
+ro.lmk.critical_upgrade=true
+ro.lmk.upgrade_pressure=40
+ro.lmk.downgrade_pressure=60
+ro.lmk.kill_heaviest_task=false
 persist.sys.mglru_enable=true
 
 # set threshold to filter unused apps
@@ -7,6 +11,9 @@ pm.dexopt.downgrade_after_inactive_days=10
 dalvik.vm.enable_pr_dexopt=false
 dalvik.vm.finalizer-timeout-ms=40000
 dalvik.vm.ps-min-first-save-ms=150000
+
+# disable machine learning
+ro.nnapi.extensions.deny_on_product=true
 
 # disable RescueParty 
 persist.sys.disable_rescue=true
@@ -23,3 +30,6 @@ debug.graphics.game_default_frame_rate.disabled=true
 
 # sf
 ro.surface_flinger.uclamp.min=1
+
+# memcg
+ro.config.per_app_memcg=true
