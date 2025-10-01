@@ -38,10 +38,10 @@ LINEAGE_DISPLAY_VERSION := $(PRODUCT_VERSION_MAJOR)-$(LINEAGE_VERSION_SUFFIX)
 
 # LineageOS version properties
 PRODUCT_SYSTEM_PROPERTIES += \
-    ro.lineage.version=$(LINEAGE_VERSION) \
-    ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION) \
-    ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE)
+    ro.axion.version=$(LINEAGE_VERSION) \
+    ro.axion.display.version=$(LINEAGE_DISPLAY_VERSION) \
+    ro.axion.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.axion.releasetype=$(LINEAGE_BUILDTYPE)
 
 # Feature
 BYPASS_CHARGE_SUPPORTED ?= false
@@ -61,8 +61,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.device_camera_info_rear=$(AXION_CAMERA_REAR_INFO) \
     persist.sys.device_camera_info_front=$(AXION_CAMERA_FRONT_INFO) \
     persist.sys.axion_maintainer=$(AXION_MAINTAINER) \
-    persist.sys.axion_processor_info=$(AXION_PROCESSOR)\
-    ro.axion.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
+    persist.sys.axion_processor_info=$(AXION_PROCESSOR)
 
 # dex2oat
 PRODUCT_PRODUCT_PROPERTIES += \
