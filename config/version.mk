@@ -52,10 +52,6 @@ HBM_SUPPORTED ?= false
 HBM_NODE ?= /sys/class/backlight/panel0-backlight/hbm_mode
 TORCH_STR_SUPPORTED ?= false
 
-# Dex2oat - recommended: 2 small cores only
-DEX2OAT_CORES ?= 0,1
-DEX2OAT_THREADS ?= 2
-
 # AxionOS properties - Build info
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.device_camera_info_rear=$(AXION_CAMERA_REAR_INFO) \
