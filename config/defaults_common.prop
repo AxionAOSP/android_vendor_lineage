@@ -8,7 +8,7 @@ persist.sys.mglru_enable=true
 # set threshold to filter unused apps
 pm.dexopt.downgrade_after_inactive_days=10
 
-dalvik.vm.enable_pr_dexopt=false
+dalvik.vm.enable_pr_dexopt=true
 dalvik.vm.finalizer-timeout-ms=40000
 dalvik.vm.ps-min-first-save-ms=150000
 
