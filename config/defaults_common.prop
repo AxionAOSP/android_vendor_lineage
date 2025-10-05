@@ -29,7 +29,7 @@ ro.input.video_enabled=false
 debug.graphics.game_default_frame_rate.disabled=true
 
 # sf
-ro.surface_flinger.uclamp.min=1
+ro.surface_flinger.uclamp.min=165
 
 # memcg
 ro.config.per_app_memcg=true
