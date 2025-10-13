@@ -1,6 +1,6 @@
 PRODUCT_VERSION_MAJOR = 2
 PRODUCT_VERSION_MINOR = 1
-PRODUCT_RELEASE_TYPE = STABLE
+PRODUCT_RELEASE_TYPE = NIGHTLY
 
 CURRENT_DEVICE := $(wordlist 2,3,$(subst _, ,$(TARGET_PRODUCT)))
 DEVICE_LIST := $(file < vendor/official_devices/OTA/axion.devices)
