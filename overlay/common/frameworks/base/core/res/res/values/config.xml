@@ -240,4 +240,6 @@
     <integer name="auto_data_switch_score_tolerance">-1</integer>
     
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
+    
+    <bool name="config_zramWriteback">false</bool>
 </resources>
