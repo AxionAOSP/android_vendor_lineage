@@ -238,4 +238,6 @@
     <bool name="config_dreamsEnabledByDefault">false</bool>
     
     <integer name="auto_data_switch_score_tolerance">-1</integer>
+    
+    <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
 </resources>
