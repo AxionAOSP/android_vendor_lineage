@@ -29,4 +29,6 @@
 
     <!-- This is disabled by default, but turned on in SetupWizard -->
     <bool name="assisted_gps_enabled">false</bool>
+    
+    <string name="def_nfc_payment_component">com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService</string>
 </resources>
