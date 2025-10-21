@@ -68,4 +68,5 @@ PRODUCT_PACKAGES += \
     AppLocker \
     EdgeLauncher \
     AxionWidgets \
-    ColumbusService
+    ColumbusService \
+    AxThemePicker
