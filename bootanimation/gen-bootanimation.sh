@@ -49,7 +49,7 @@ IMAGEHEIGHT=$(expr $IMAGEWIDTH / 3);
 RESOLUTION="$IMAGEWIDTH"x"$IMAGEHEIGHT";
 
 for img in $INTERMEDIATES/*/*.png; do
-    convert "$img" -resize $RESOLUTION -colors 256 "$img"
+    convert "$img" -filter Lanczos -resize $RESOLUTION -colors 256 -strip "$img"
 done
 
 echo "$IMAGESCALEWIDTH $IMAGESCALEHEIGHT 60" > $INTERMEDIATES/desc.txt;
