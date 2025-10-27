@@ -26,9 +26,6 @@ debug.graphics.game_default_frame_rate.disabled=true
 # sf
 ro.surface_flinger.uclamp.min=165
 
-# memcg
-ro.config.per_app_memcg=true
-
 # virtual ab
 ro.virtual_ab.compression.enabled=true
 ro.virtual_ab.userspace.snapshots.enabled=true
