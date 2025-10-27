@@ -160,11 +160,20 @@ def add_to_manifest(repositories):
     if dryrun:
         return
 
-    try:
-        lm = ElementTree.parse(".repo/local_manifests/roomservice.xml")
-        lm = lm.getroot()
-    except:
-        lm = ElementTree.Element("manifest")
+    manifest_path = ".repo/local_manifests/roomservice.xml"
+
+    if os.path.exists(manifest_path):
+        try:
+            lm = ElementTree.parse(manifest_path)
+            lm_root = lm.getroot()
+            if lm_root.findall("project"):
+                print("roomservice.xml already has contents; skipping modification.")
+                return
+        except ElementTree.ParseError:
+            print("Warning: roomservice.xml exists but is malformed; continuing.")
+            lm_root = ElementTree.Element("manifest")
+    else:
+        lm_root = ElementTree.Element("manifest")
 
     for repository in repositories:
         repo_name = repository['repository']
@@ -175,31 +184,32 @@ def add_to_manifest(repositories):
             print('LineageOS/%s already fetched to %s' % (repo_name, repo_target))
             continue
 
-        project = ElementTree.Element("project", attrib = {
+        project = ElementTree.Element("project", attrib={
             "path": repo_target,
             "remote": "github",
             "name": "LineageOS/%s" % repo_name,
-            "revision": repo_revision })
+            "revision": repo_revision
+        })
+
         if repo_remote := repository.get("remote", None):
-            # aosp- remotes are only used for kernel prebuilts, thus they
-            # don't let you customize clone-depth/revision.
             if repo_remote.startswith("aosp-"):
                 project.attrib["name"] = repo_name
                 project.attrib["remote"] = repo_remote
                 project.attrib["clone-depth"] = "1"
                 del project.attrib["revision"]
+
         if project.attrib.get("revision", None) == get_default_revision():
             del project.attrib["revision"]
-        print("Adding dependency: %s -> %s" % (project.attrib["name"], project.attrib["path"]))
-        lm.append(project)
 
-    indent(lm, 0)
-    raw_xml = ElementTree.tostring(lm).decode()
+        print("Adding dependency: %s -> %s" % (project.attrib["name"], project.attrib["path"]))
+        lm_root.append(project)
+
+    indent(lm_root, 0)
+    raw_xml = ElementTree.tostring(lm_root).decode()
     raw_xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + raw_xml
 
-    f = open('.repo/local_manifests/roomservice.xml', 'w')
-    f.write(raw_xml)
-    f.close()
+    with open(manifest_path, 'w') as f:
+        f.write(raw_xml)
 
 def fetch_dependencies(repo_path):
     print('Looking for dependencies in %s' % repo_path)
