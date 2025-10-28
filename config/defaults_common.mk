@@ -22,9 +22,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 system/etc/preloaded-classes.txt
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.madvise.vdexfile.size=31457280\
-    dalvik.vm.madvise.odexfile.size=31457280\
-    dalvik.vm.madvise.artfile.size=0
     dalvik.vm.minidebuginfo=false \
     dalvik.vm.dex2oat-minidebuginfo=false
 
@@ -42,7 +39,10 @@ ifeq ($(TARGET_IS_LOW_RAM),true)
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=256m \
-    pm.dexopt.shared=quicken
+    pm.dexopt.shared=quicken \
+    dalvik.vm.madvise.vdexfile.size=31457280\
+    dalvik.vm.madvise.odexfile.size=31457280\
+    dalvik.vm.madvise.artfile.size=0
 endif
 
 ###############
