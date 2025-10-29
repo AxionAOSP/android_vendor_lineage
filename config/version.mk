@@ -52,6 +52,10 @@ HBM_SUPPORTED ?= false
 HBM_NODE ?= /sys/class/backlight/panel0-backlight/hbm_mode
 TORCH_STR_SUPPORTED ?= false
 
+# optional
+TARGET_USES_SLMK ?= false
+TARGET_SLMK_DEBUG ?= false
+
 # AxionOS properties - Build info
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.device_camera_info_rear=$(AXION_CAMERA_REAR_INFO) \
@@ -85,3 +89,8 @@ ifeq ($(PERF_ANIM_OVERRIDE),true)
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.predict_hwc_composition_strategy=0
 endif
+
+# optional
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.lmk.use_simple_lmk=$(TARGET_USES_SLMK) \
+    ro.lmk.slmk_debug=$(TARGET_SLMK_DEBUG)
