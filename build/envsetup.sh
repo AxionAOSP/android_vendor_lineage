@@ -995,7 +995,7 @@ function build_kernel() {
         fi
     fi
     if [ -d "${KERNEL_BUILD_TOP}/out/${target_kernel_device}/dist" ]; then
-        rm -rf "${KERNEL_BUILD_TOP}/out/${target_kernel_device}/dist"
+        rm -rf "${KERNEL_BUILD_TOP}/out"
     fi
     if ! ./build_"${target_kernel_device}".sh; then
         popd > /dev/null
