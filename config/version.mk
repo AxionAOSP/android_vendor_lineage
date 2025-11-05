@@ -1,12 +1,12 @@
 PRODUCT_VERSION_MAJOR = 2
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MINOR = 2
 PRODUCT_RELEASE_TYPE = NIGHTLY
 
 CURRENT_DEVICE := $(wordlist 2,3,$(subst _, ,$(TARGET_PRODUCT)))
 DEVICE_LIST := $(file < vendor/official_devices/OTA/axion.devices)
 MAINTAINER_LIST := $(file < vendor/official_devices/OTA/axion.maintainers)
 
-LINEAGE_BUILDTYPE ?= COMMUNITY
+LINEAGE_BUILDTYPE ?= UNOFFICIAL
 
 ifneq ($(filter $(CURRENT_DEVICE),$(DEVICE_LIST)),)
     ifneq ($(AXION_MAINTAINER),)
