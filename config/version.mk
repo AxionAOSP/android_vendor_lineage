@@ -47,7 +47,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
 BYPASS_CHARGE_SUPPORTED ?= false
 PERF_GOV_SUPPORTED ?= false
 PERF_DEFAULT_GOV ?= schedutil
-PERF_ANIM_OVERRIDE ?= false
 HBM_SUPPORTED ?= false
 HBM_NODE ?= /sys/class/backlight/panel0-backlight/hbm_mode
 TORCH_STR_SUPPORTED ?= false
@@ -55,6 +54,10 @@ TORCH_STR_SUPPORTED ?= false
 # optional
 TARGET_USES_SLMK ?= false
 TARGET_SLMK_DEBUG ?= false
+
+# flags
+PERF_ANIM_OVERRIDE ?= false
+TARGET_NEEDS_DOZE_FIX ?= false
 
 # AxionOS properties - Build info
 PRODUCT_SYSTEM_PROPERTIES += \
@@ -81,9 +84,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.axion_gpu_freqs_path=$(GPU_FREQS_PATH) \
     persist.sys.axion_gpu_minfreq_file=$(GPU_MIN_FREQ_PATH)
 
-# PERF_ANIM_OVERRIDE  
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE)
     
 ifeq ($(PERF_ANIM_OVERRIDE),true)
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -94,3 +94,8 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.use_simple_lmk=$(TARGET_USES_SLMK) \
     ro.lmk.slmk_debug=$(TARGET_SLMK_DEBUG)
+    
+# flags
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE) \
+    persist.sys.enable_doze_fix=$(TARGET_NEEDS_DOZE_FIX)
