@@ -54,6 +54,7 @@ TORCH_STR_SUPPORTED ?= false
 # optional
 TARGET_USES_SLMK ?= false
 TARGET_SLMK_DEBUG ?= false
+TARGET_DISABLES_LIBPERF ?= false
 
 # flags
 PERF_ANIM_OVERRIDE ?= false
@@ -93,7 +94,8 @@ endif
 # optional
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.use_simple_lmk=$(TARGET_USES_SLMK) \
-    ro.lmk.slmk_debug=$(TARGET_SLMK_DEBUG)
+    ro.lmk.slmk_debug=$(TARGET_SLMK_DEBUG) \
+    persist.sys.target_disables_libperf=$(TARGET_DISABLES_LIBPERF)
     
 # flags
 PRODUCT_PRODUCT_PROPERTIES += \
