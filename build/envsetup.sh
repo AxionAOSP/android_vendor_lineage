@@ -1014,3 +1014,7 @@ function build_kernel() {
     chmod -x "${target_kernel_dir}/"*
     echo "Kernel build output copied to ${target_kernel_dir}/"
 }
+
+function bk() {
+    SKIP_KERNEL_SYNC=1 build_kernel
+}
