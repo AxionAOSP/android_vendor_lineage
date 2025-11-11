@@ -93,7 +93,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.predict_hwc_composition_strategy=0
 endif
 
-# optional
+# optional (rmp accessibility)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.use_simple_lmk=$(TARGET_USES_SLMK) \
     ro.lmk.slmk_debug=$(TARGET_SLMK_DEBUG) \
