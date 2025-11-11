@@ -50,6 +50,7 @@ PERF_DEFAULT_GOV ?= schedutil
 HBM_SUPPORTED ?= false
 HBM_NODE ?= /sys/class/backlight/panel0-backlight/hbm_mode
 TORCH_STR_SUPPORTED ?= false
+TARGET_ENABLES_IMS_OVERRIDES ?= false
 
 # optional
 TARGET_USES_SLMK ?= false
@@ -83,7 +84,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.hbmservice_file=$(HBM_NODE) \
     persist.sys.torch_str_support=$(TORCH_STR_SUPPORTED) \
     persist.sys.axion_gpu_freqs_path=$(GPU_FREQS_PATH) \
-    persist.sys.axion_gpu_minfreq_file=$(GPU_MIN_FREQ_PATH)
+    persist.sys.axion_gpu_minfreq_file=$(GPU_MIN_FREQ_PATH) \
+    persist.sys.target_enables_ims_override=$(TARGET_ENABLES_IMS_OVERRIDES)
 
     
 ifeq ($(PERF_ANIM_OVERRIDE),true)
