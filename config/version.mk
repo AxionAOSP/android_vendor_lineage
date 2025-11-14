@@ -53,8 +53,8 @@ TORCH_STR_SUPPORTED ?= false
 TARGET_ENABLES_IMS_OVERRIDES ?= false
 
 # optional
-TARGET_USES_SLMK ?= false
-TARGET_SLMK_DEBUG ?= false
+TARGET_USES_USLMK ?= false
+TARGET_USLMK_DEBUG ?= false
 TARGET_DISABLES_LIBPERF ?= false
 
 # flags
@@ -95,8 +95,8 @@ endif
 
 # optional (rmp accessibility)
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.lmk.use_simple_lmk=$(TARGET_USES_SLMK) \
-    ro.lmk.slmk_debug=$(TARGET_SLMK_DEBUG) \
+    ro.lmk.use_simple_lmk=$(TARGET_USES_USLMK) \
+    ro.lmk.slmk_debug=$(TARGET_USLMK_DEBUG) \
     persist.sys.target_disables_libperf=$(TARGET_DISABLES_LIBPERF)
     
 # flags
