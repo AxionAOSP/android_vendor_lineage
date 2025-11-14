@@ -1,4 +1,5 @@
 # Allow vendor/extra to override any property by setting it first
+-include vendor/lineage-priv/flag_overrides/flags.mk
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/addons/config.mk)
 $(call inherit-product, vendor/lineage/config/defaults_common.mk)
