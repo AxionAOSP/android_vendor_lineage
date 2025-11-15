@@ -51,6 +51,7 @@ HBM_SUPPORTED ?= false
 HBM_NODE ?= /sys/class/backlight/panel0-backlight/hbm_mode
 TORCH_STR_SUPPORTED ?= false
 TARGET_ENABLES_IMS_OVERRIDES ?= false
+TARGET_TOUCH_BOOST_SUPPORTED ?= false
 
 # optional
 TARGET_USES_USLMK ?= false
@@ -85,7 +86,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.torch_str_support=$(TORCH_STR_SUPPORTED) \
     persist.sys.axion_gpu_freqs_path=$(GPU_FREQS_PATH) \
     persist.sys.axion_gpu_minfreq_file=$(GPU_MIN_FREQ_PATH) \
-    persist.sys.target_enables_ims_override=$(TARGET_ENABLES_IMS_OVERRIDES)
+    persist.sys.target_enables_ims_override=$(TARGET_ENABLES_IMS_OVERRIDES) \
+    persist.sys.target_supports_touch_boost=$(TARGET_TOUCH_BOOST_SUPPORTED) 
 
     
 ifeq ($(PERF_ANIM_OVERRIDE),true)
