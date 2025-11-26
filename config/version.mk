@@ -22,6 +22,12 @@ else
     LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d)
 endif
 
+ifeq ($(WITH_GMS),true)
+AXION_BUILD_VARIANT := GMS
+else
+AXION_BUILD_VARIANT := VANILLA
+endif
+
 LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)-$(AXION_BUILD_VARIANT)-$(LINEAGE_BUILD)
 
 # Internal version
