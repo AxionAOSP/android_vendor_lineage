@@ -295,3 +295,7 @@ include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+
+ifeq ($(WITH_GMS), true)
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+endif
