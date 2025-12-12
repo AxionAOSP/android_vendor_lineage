@@ -15,4 +15,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="config_bodyFontFamily" translatable="false">Rookery-Regular</string>
+    <string name="config_bodyFontFamilyMedium" translatable="false">Rookery-Regular</string>
+    <string name="config_headlineFontFamily" translatable="false">Rookery-Regular</string>
+    <string name="config_headlineFontFamilyMedium" translatable="false">Rookery-Regular</string>
 </resources>
