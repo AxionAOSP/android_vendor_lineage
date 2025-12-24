@@ -35,3 +35,6 @@ ro.virtual_ab.compression.threads=true
 # Disable touch video heatmap to reduce latency, motion jitter, and CPU usage
 # on supported devices with Deep Press input classifier HALs and models
 ro.input.video_enabled=false
+
+# Disable default frame rate limit for games
+debug.graphics.game_default_frame_rate.disabled=true
