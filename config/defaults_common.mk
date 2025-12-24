@@ -5,4 +5,5 @@ PRODUCT_PACKAGES += \
     EdgeLauncher \
     AxThemeStore \
     AxThemePicker \
-    AxSandbox
+    AxSandbox \
+    AxionWidgets
