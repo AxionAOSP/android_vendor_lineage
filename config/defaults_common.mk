@@ -9,4 +9,5 @@ PRODUCT_PACKAGES += \
     AxionWidgets \
     GameSpace \
     OmniJaws \
-    ColumbusService
+    ColumbusService \
+    AxionParts
