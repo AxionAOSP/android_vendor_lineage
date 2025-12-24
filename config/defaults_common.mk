@@ -7,4 +7,5 @@ PRODUCT_PACKAGES += \
     AxThemePicker \
     AxSandbox \
     AxionWidgets \
-    GameSpace
+    GameSpace \
+    OmniJaws
