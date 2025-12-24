@@ -4,3 +4,6 @@ pm.dexopt.downgrade_after_inactive_days=10
 dalvik.vm.enable_pr_dexopt=true
 dalvik.vm.finalizer-timeout-ms=40000
 dalvik.vm.ps-min-first-save-ms=150000
+
+# disable machine learning
+ro.nnapi.extensions.deny_on_product=true
