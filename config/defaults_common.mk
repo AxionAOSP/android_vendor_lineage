@@ -8,4 +8,5 @@ PRODUCT_PACKAGES += \
     AxSandbox \
     AxionWidgets \
     GameSpace \
-    OmniJaws
+    OmniJaws \
+    ColumbusService
