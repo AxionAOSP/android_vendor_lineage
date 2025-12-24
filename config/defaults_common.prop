@@ -11,6 +11,9 @@ ro.nnapi.extensions.deny_on_product=true
 # disable RescueParty 
 persist.sys.disable_rescue=true
 
+# disable privapp_permissions
+ro.control_privapp_permissions=disable
+
 # sf
 ro.surface_flinger.uclamp.min=165
 
