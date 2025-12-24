@@ -10,3 +10,6 @@ ro.nnapi.extensions.deny_on_product=true
 
 # disable RescueParty 
 persist.sys.disable_rescue=true
+
+# sf
+ro.surface_flinger.uclamp.min=165
