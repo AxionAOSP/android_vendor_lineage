@@ -7,3 +7,6 @@ dalvik.vm.ps-min-first-save-ms=150000
 
 # disable machine learning
 ro.nnapi.extensions.deny_on_product=true
+
+# disable RescueParty 
+persist.sys.disable_rescue=true
