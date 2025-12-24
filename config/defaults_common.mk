@@ -6,4 +6,5 @@ PRODUCT_PACKAGES += \
     AxThemeStore \
     AxThemePicker \
     AxSandbox \
-    AxionWidgets
+    AxionWidgets \
+    GameSpace
