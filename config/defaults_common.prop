@@ -36,8 +36,5 @@ ro.virtual_ab.compression.threads=true
 # on supported devices with Deep Press input classifier HALs and models
 ro.input.video_enabled=false
 
-# Disable default frame rate limit for games
-debug.graphics.game_default_frame_rate.disabled=true
-
 # EGL shader cache
 ro.egl.blobcache.multifile_limit=67108864
