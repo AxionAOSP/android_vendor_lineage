@@ -17,6 +17,9 @@ ro.control_privapp_permissions=disable
 # sf
 ro.surface_flinger.uclamp.min=165
 
+# sound
+audio.safemedia.bypass=1
+
 # virtual ab
 ro.virtual_ab.compression.enabled=true
 ro.virtual_ab.userspace.snapshots.enabled=true
