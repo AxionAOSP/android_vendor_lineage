@@ -6,6 +6,7 @@ $(call inherit-product-if-exists, vendor/addons/config.mk)
 ifeq ($(TARGET_INCLUDE_VIPERFX),true)
 $(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
 endif
+$(call inherit-product-if-exists, packages/apps/FaceUnlock/common.mk)
 include vendor/lineage/audio/config.mk
 
 # Allow vendor prebuilt repos to exclude themselves from bp scanning
