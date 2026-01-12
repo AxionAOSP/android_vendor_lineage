@@ -52,6 +52,8 @@ HBM_NODE ?= /sys/class/backlight/panel0-backlight/hbm_mode
 TORCH_STR_SUPPORTED ?= false
 TARGET_ENABLES_IMS_OVERRIDES ?= false
 TARGET_TOUCH_BOOST_SUPPORTED ?= false
+BYPASS_CHARGE_TOGGLE_PATH ?= /sys/class/power_supply/battery/input_suspend
+BYPASS_CHARGE_LEVEL_PATH ?= /sys/devices/platform/google,charger/charge_stop_level
 
 # optional
 TARGET_USES_USLMK ?= false
@@ -72,6 +74,8 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # FEATURES
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.battery_bypass_supported=$(BYPASS_CHARGE_SUPPORTED) \
+    persist.sys.gs_charge_bypass_lvl_path=$(BYPASS_CHARGE_LEVEL_PATH) \
+    persist.sys.gs_charge_bypass_toggle_path=$(BYPASS_CHARGE_TOGGLE_PATH) \
     persist.sys.dev_supports_perf_gov=$(PERF_GOV_SUPPORTED) \
     persist.sys.default_scaling_gov=$(PERF_DEFAULT_GOV) \
     persist.sys.hbmservice_support=$(HBM_SUPPORTED) \
