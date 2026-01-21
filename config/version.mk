@@ -84,7 +84,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.axion_gpu_freqs_path=$(GPU_FREQS_PATH) \
     persist.sys.axion_gpu_minfreq_file=$(GPU_MIN_FREQ_PATH) \
     persist.sys.target_enables_ims_override=$(TARGET_ENABLES_IMS_OVERRIDES) \
-    persist.sys.target_supports_touch_boost=$(TARGET_TOUCH_BOOST_SUPPORTED) 
+    persist.sys.target_supports_touch_boost=$(TARGET_TOUCH_BOOST_SUPPORTED) \
+    persist.sys.display_refresh_rates_list=$(TARGET_SUPPORTED_REFRESH_RATES)
 
     
 ifeq ($(PERF_ANIM_OVERRIDE),true)
