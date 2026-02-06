@@ -10,7 +10,8 @@ PRODUCT_PACKAGES += \
     GameSpace \
     OmniJaws \
     ColumbusService \
-    AxionParts
+    AxionParts \
+    AxPcMode
     
 # Enable blur
 TARGET_ENABLE_BLUR ?= true
