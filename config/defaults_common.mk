@@ -7,4 +7,5 @@ PRODUCT_PACKAGES += \
     AxThemePicker \
     AxQuickLook \
     AxionWidgets \
-    AxionParts
+    AxionParts \
+    AxThemeStore
