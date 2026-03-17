@@ -8,7 +8,8 @@ PRODUCT_PACKAGES += \
     AxQuickLook \
     AxionWidgets \
     AxionParts \
-    AxThemeStore
+    AxThemeStore \
+    OmniJaws
 
 TARGET_INCLUDE_AXFX ?= false
 ifeq ($(TARGET_INCLUDE_AXFX),true)
