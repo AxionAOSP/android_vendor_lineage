@@ -38,3 +38,6 @@ ro.input.video_enabled=false
 
 # Disable default frame rate limit for games
 debug.graphics.game_default_frame_rate.disabled=true
+
+# EGL shader cache
+ro.egl.blobcache.multifile_limit=67108864
