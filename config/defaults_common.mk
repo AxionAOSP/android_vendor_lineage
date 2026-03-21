@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
     AxThemeStore \
     AxPcMode \
     AxSandbox \
+    GameSpace \
     OmniJaws
 
 TARGET_INCLUDE_AXFX ?= false
