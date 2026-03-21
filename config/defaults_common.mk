@@ -9,6 +9,7 @@ PRODUCT_PACKAGES += \
     AxionWidgets \
     AxionParts \
     AxThemeStore \
+    AxPcMode \
     OmniJaws
 
 TARGET_INCLUDE_AXFX ?= false
