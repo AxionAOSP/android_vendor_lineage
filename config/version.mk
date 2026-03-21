@@ -59,6 +59,10 @@ TARGET_DISABLES_LIBPERF ?= false
 # flags
 PERF_ANIM_OVERRIDE ?= false
 TARGET_NEEDS_DOZE_FIX ?= false
+TARGET_DOZE_TAP_PULSE_SUPPORTED ?= false
+TARGET_DOZE_DOUBLE_TAP_PULSE_SUPPORTED ?= false
+TARGET_DOZE_PICKUP_PULSE_SUPPORTED ?= false
+TARGET_DOZE_SIDE_FPS_PULSE_SUPPORTED ?= false
 
 # AxionOS properties - Build info
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -93,4 +97,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # flags
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE) \
-    persist.sys.enable_doze_fix=$(TARGET_NEEDS_DOZE_FIX)
+    persist.sys.enable_doze_fix=$(TARGET_NEEDS_DOZE_FIX) \
+    persist.sys.ax_doze_tap_pulse_supported=$(TARGET_DOZE_TAP_PULSE_SUPPORTED) \
+    persist.sys.ax_doze_double_tap_pulse_supported=$(TARGET_DOZE_DOUBLE_TAP_PULSE_SUPPORTED) \
+    persist.sys.ax_doze_pickup_pulse_supported=$(TARGET_DOZE_PICKUP_PULSE_SUPPORTED) \
+    persist.sys.ax_doze_side_fps_pulse_supported=$(TARGET_DOZE_SIDE_FPS_PULSE_SUPPORTED)
