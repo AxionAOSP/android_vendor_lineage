@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
     AxThemeStore \
     AxPcMode \
     AxSandbox \
+    EdgeLauncher \
     GameSpace \
     OmniJaws
 
