@@ -13,7 +13,8 @@ PRODUCT_PACKAGES += \
     AxSandbox \
     EdgeLauncher \
     GameSpace \
-    OmniJaws
+    OmniJaws \
+    ColumbusService
 
 TARGET_INCLUDE_AXFX ?= false
 ifeq ($(TARGET_INCLUDE_AXFX),true)
