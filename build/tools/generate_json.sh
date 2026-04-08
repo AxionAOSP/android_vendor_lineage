@@ -69,7 +69,7 @@ cat > "$JSON_FILE" <<EOF
             "id": "$ID",
             "romtype": "$ROMTYPE",
             "size": $SIZE,
-            "url": "https://github.com/AxionAOSP/AxionOS_Pixels/releases/download/$VERSION/$FILENAME",
+            "url": "https://cdn.axionos.org/$TARGET_DEVICE/$FILENAME",
             "version": "$VERSION"
         }
     ]
