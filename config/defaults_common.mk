@@ -15,6 +15,14 @@ PRODUCT_PACKAGES += \
     GameSpace \
     OmniJaws \
     ColumbusService
+    
+# eliminate interpreter overhead
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Settings \
+    AxThemePicker \
+    AxionParts \
+    EdgeLauncher \
+    GameSpace
 
 TARGET_INCLUDE_AXFX ?= false
 ifeq ($(TARGET_INCLUDE_AXFX),true)
