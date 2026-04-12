@@ -1,5 +1,6 @@
 # set threshold to filter unused apps
 pm.dexopt.downgrade_after_inactive_days=10
+pm.dexopt.boot-after-ota=speed-profile
 
 dalvik.vm.enable_pr_dexopt=true
 dalvik.vm.finalizer-timeout-ms=40000
