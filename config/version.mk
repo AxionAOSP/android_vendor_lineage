@@ -57,7 +57,7 @@ TARGET_TOUCH_BOOST_SUPPORTED ?= false
 TARGET_DISABLES_LIBPERF ?= false
 
 # flags
-PERF_ANIM_OVERRIDE ?= false
+PERF_ANIM_OVERRIDE ?= true
 TARGET_NEEDS_DOZE_FIX ?= false
 TARGET_DOZE_TAP_PULSE_SUPPORTED ?= false
 TARGET_DOZE_DOUBLE_TAP_PULSE_SUPPORTED ?= false
@@ -86,12 +86,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.target_enables_ims_override=$(TARGET_ENABLES_IMS_OVERRIDES) \
     persist.sys.target_supports_touch_boost=$(TARGET_TOUCH_BOOST_SUPPORTED) \
     persist.sys.display_refresh_rates_list=$(TARGET_SUPPORTED_REFRESH_RATES)
-
-    
-ifeq ($(PERF_ANIM_OVERRIDE),true)
-PRODUCT_PRODUCT_PROPERTIES += \
-    debug.sf.predict_hwc_composition_strategy=0
-endif
 
 # optional (rmp accessibility)
 PRODUCT_PRODUCT_PROPERTIES += \
