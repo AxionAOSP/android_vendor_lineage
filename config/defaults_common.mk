@@ -22,7 +22,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     AxThemePicker \
     AxionParts \
     EdgeLauncher \
-    GameSpace
+    GameSpace \
+    AppLocker
 
 TARGET_INCLUDE_AXFX ?= false
 ifeq ($(TARGET_INCLUDE_AXFX),true)
