@@ -266,8 +266,8 @@ $(call inherit-product, vendor/lineage/audio/audio.mk)
 
 # SetupWizard
 PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.theme=glif_v4 \
-    setupwizard.feature.day_night_mode_enabled=true
+    setupwizard.theme?=glif_v4 \
+    setupwizard.feature.day_night_mode_enabled?=true
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
