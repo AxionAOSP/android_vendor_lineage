@@ -29,8 +29,12 @@ else
     exit 1
 fi
 
-if [[ "$FILENAME" =~ axion-.*-$ROMTYPE-(GMS|VANILLA)-.*\.zip ]]; then
-    FLAVOR="${BASH_REMATCH[1]}"
+if [[ "$FILENAME" =~ axion-.*-$ROMTYPE-(GMS|PICO|CORE|VANILLA)-[^-]+\.zip ]]; then
+    BUILD_FLAVOR="${BASH_REMATCH[1]}"
+    case "$BUILD_FLAVOR" in
+        GMS|PICO|CORE) FLAVOR="GMS" ;;
+        VANILLA) FLAVOR="VANILLA" ;;
+    esac
 else
     echo "Error: Unable to extract build flavor from filename: $FILENAME"
     exit 1

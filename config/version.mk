@@ -23,7 +23,14 @@ else
 endif
 
 ifeq ($(WITH_GMS),true)
+TARGET_GAPPS_VARIANT ?= gms
+ifeq ($(TARGET_GAPPS_VARIANT),pico)
+AXION_BUILD_VARIANT := PICO
+else ifeq ($(TARGET_GAPPS_VARIANT),core)
+AXION_BUILD_VARIANT := CORE
+else
 AXION_BUILD_VARIANT := GMS
+endif
 else
 AXION_BUILD_VARIANT := VANILLA
 endif
