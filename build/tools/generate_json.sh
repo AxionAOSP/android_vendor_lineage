@@ -15,30 +15,23 @@ PRODUCT_OUT=$2
 LINEAGE_ZIP=$3
 FILENAME="axion-$LINEAGE_ZIP"
 
-if [[ "$FILENAME" =~ axion-.*-(COMMUNITY|OFFICIAL|UNOFFICIAL)-.*\.zip ]]; then
-    ROMTYPE="${BASH_REMATCH[1]}"
-else
-    echo "Error: Unable to extract ROM type from filename: $FILENAME"
-    exit 1
-fi
-
-if [[ "$FILENAME" =~ axion-([0-9\.]+)(-[A-Za-z]+)?-[0-9]+-$ROMTYPE-.*\.zip ]]; then
+if [[ "$FILENAME" =~ ^axion-([0-9]+(\.[0-9]+)*)-([[:alnum:]_]+)-[0-9]+-(COMMUNITY|OFFICIAL|UNOFFICIAL)-(GMS|PICO|CORE|VANILLA)-.+\.zip$ ]]; then
     VERSION="${BASH_REMATCH[1]}"
+    ROMTYPE="${BASH_REMATCH[4]}"
+    BUILD_FLAVOR="${BASH_REMATCH[5]}"
 else
-    echo "Error: Unable to extract version from filename: $FILENAME"
+    echo "Error: Unable to parse filename: $FILENAME"
     exit 1
 fi
 
-if [[ "$FILENAME" =~ axion-.*-$ROMTYPE-(GMS|PICO|CORE|VANILLA)-[^-]+\.zip ]]; then
-    BUILD_FLAVOR="${BASH_REMATCH[1]}"
-    case "$BUILD_FLAVOR" in
-        GMS|PICO|CORE) FLAVOR="GMS" ;;
-        VANILLA) FLAVOR="VANILLA" ;;
-    esac
-else
-    echo "Error: Unable to extract build flavor from filename: $FILENAME"
-    exit 1
-fi
+case "$BUILD_FLAVOR" in
+    GMS|PICO|CORE) FLAVOR="GMS" ;;
+    VANILLA) FLAVOR="VANILLA" ;;
+    *)
+        echo "Error: Unable to map build flavor from filename: $BUILD_FLAVOR"
+        exit 1
+        ;;
+esac
 
 FILE_PATH="$PRODUCT_OUT/$FILENAME"
 
