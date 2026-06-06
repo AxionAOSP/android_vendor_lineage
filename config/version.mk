@@ -2,17 +2,19 @@ PRODUCT_VERSION_MAJOR = 2
 PRODUCT_VERSION_MINOR = 7
 PRODUCT_RELEASE_TYPE = PROXIMA_BETA
 
-CURRENT_DEVICE := $(wordlist 2,3,$(subst _, ,$(TARGET_PRODUCT)))
-DEVICE_LIST := $(file < vendor/official_devices/OTA/axion.devices)
-MAINTAINER_LIST := $(file < vendor/official_devices/OTA/axion.maintainers)
+include vendor/official_devices/infra/official_devices.mk
+
+CURRENT_DEVICE := $(TARGET_DEVICE)
+ifeq ($(CURRENT_DEVICE),)
+CURRENT_DEVICE := $(patsubst lineage_%,%,$(TARGET_PRODUCT))
+endif
+AXION_OFFICIAL_DEVICE_MAINTAINERS := $(AXION_OFFICIAL_MAINTAINERS_$(CURRENT_DEVICE))
 
 LINEAGE_BUILDTYPE ?= UNOFFICIAL
 
-ifneq ($(filter $(CURRENT_DEVICE),$(DEVICE_LIST)),)
-    ifneq ($(AXION_MAINTAINER),)
-        ifneq ($(filter $(AXION_MAINTAINER),$(MAINTAINER_LIST)),)
-            LINEAGE_BUILDTYPE := OFFICIAL
-        endif
+ifneq ($(AXION_MAINTAINER),)
+    ifneq ($(filter $(AXION_MAINTAINER),$(AXION_OFFICIAL_DEVICE_MAINTAINERS)),)
+        LINEAGE_BUILDTYPE := OFFICIAL
     endif
 endif
 
