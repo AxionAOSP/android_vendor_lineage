@@ -28,3 +28,15 @@ $(LINEAGE_TARGET_PACKAGE): $(INTERNAL_OTA_PACKAGE_TARGET)
 
 .PHONY: bacon
 bacon: $(LINEAGE_TARGET_PACKAGE) $(DEFAULT_GOAL)
+
+# -----------------------------------------------------------------
+# Axion Fastboot update package
+
+AXION_FASTBOOT_PACKAGE := $(PRODUCT_OUT)/axion_$(TARGET_DEVICE)-img.zip
+
+$(AXION_FASTBOOT_PACKAGE): $(INTERNAL_UPDATE_PACKAGE_TARGET)
+	$(hide) mv $(INTERNAL_UPDATE_PACKAGE_TARGET) $(AXION_FASTBOOT_PACKAGE)
+	@echo "Fastboot Package Complete: $(AXION_FASTBOOT_PACKAGE)" >&2
+
+.PHONY: updatepackage
+updatepackage: $(AXION_FASTBOOT_PACKAGE)
