@@ -11,3 +11,4 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 endif
 
 include vendor/lineage/config/BoardConfigSoong.mk
+include device/axion/common/build/BoardConfigAxion.mk
